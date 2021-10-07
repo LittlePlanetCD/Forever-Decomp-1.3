@@ -113,7 +113,8 @@ int InitRenderDevice()
     SDL_DisableScreenSaver();
 
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "nearest");
-    SDL_SetHint(SDL_HINT_RENDER_VSYNC, Engine.vsync ? "1" : "0");
+	SDL_SetHint(SDL_HINT_RENDER_VSYNC, Engine.vsync ? "1" : "1");
+    //SDL_SetHint(SDL_HINT_RENDER_VSYNC, Engine.vsync ? "1" : "0");
 
     byte flags = 0;
 #if RETRO_USING_OPENGL
@@ -249,9 +250,10 @@ int InitRenderDevice()
 #if RETRO_USING_OPENGL
 
     // Init GL
-    Engine.glContext = SDL_GL_CreateContext(Engine.window);
+	Engine.glContext = SDL_GL_CreateContext(Engine.window);
 
-    SDL_GL_SetSwapInterval(Engine.vsync ? 1 : 0);
+    SDL_GL_SetSwapInterval(Engine.vsync ? 1 : 1);
+	//SDL_GL_SetSwapInterval(Engine.vsync ? 1 : 0);
 
 #if RETRO_PLATFORM != RETRO_ANDROID && RETRO_PLATFORM != RETRO_OSX
     GLenum err = glewInit();
