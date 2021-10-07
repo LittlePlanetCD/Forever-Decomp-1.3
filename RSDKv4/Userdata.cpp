@@ -253,7 +253,7 @@ void InitUserdata()
         if (!ini.GetBool("Game", "SkipStartMenu", &skipStartMenu))
             skipStartMenu = true;
         skipStartMenu_Config = skipStartMenu;
-        if (!ini.GetBool("Game", "DisableFocusPause", &disableFocusPause))
+        //if (!ini.GetBool("Game", "DisableFocusPause", &disableFocusPause))
             disableFocusPause = true;
         disableFocusPause_Config = disableFocusPause;
 
@@ -531,8 +531,8 @@ void writeSettings()
     ini.SetInteger("Game", "Language", Engine.language);
     ini.SetComment("Game", "SSMenuComment", "if set to true, disables the start menu");
     ini.SetBool("Game", "SkipStartMenu", skipStartMenu_Config);
-    ini.SetComment("Game", "DFPMenuComment", "if set to true, disables the game pausing when focus is lost");
-    ini.SetBool("Game", "DisableFocusPause", disableFocusPause_Config);
+    //ini.SetComment("Game", "DFPMenuComment", "if set to true, disables the game pausing when focus is lost");
+    //ini.SetBool("Game", "DisableFocusPause", disableFocusPause_Config);
 
 #if RETRO_USE_NETWORKING
     ini.SetComment("Network", "HostComment", "The host (IP address or \"URL\") that the game will try to connect to.");
