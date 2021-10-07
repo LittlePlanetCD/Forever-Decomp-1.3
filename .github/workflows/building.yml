@@ -2,7 +2,7 @@ name: Build RSDKvForever
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   v4-windows:
