@@ -1502,7 +1502,7 @@ void setFullScreen(bool fs)
 #if RETRO_USING_OPENGL
         SDL_DisplayMode mode;
         SDL_GetDesktopDisplayMode(0, &mode);
-        // SetScreenDimensions(mode.w, mode.h);
+        SetScreenDimensions(mode.w, mode.h);
         setupViewport();
         int w = mode.w;
         int h = mode.h;
